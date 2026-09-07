@@ -14,7 +14,6 @@ class Program
 
     static async Task<int> Main(string[] args)
     {
-        Console.WriteLine("If you can see this, the app is incomplete");
         using HttpResponseMessage response = await httpClient.GetAsync("fact");
         response.EnsureSuccessStatusCode();
         string jsonResponse = await response.Content.ReadAsStringAsync();
