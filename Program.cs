@@ -11,8 +11,10 @@ class Program
     {
         BaseAddress = new Uri("https://catfact.ninja"),
     };
-    private static async Task Run()
+
+    static async Task Main(string[] args)
     {
+        Console.WriteLine("If you can see this, the app is incomplete");
         using HttpResponseMessage response = await httpClient.GetAsync("fact");
         response.EnsureSuccessStatusCode();
         string jsonResponse = await response.Content.ReadAsStringAsync();
@@ -22,12 +24,6 @@ class Program
             jsonResponse = $"{jsonResponse}\n";
         }
         File.AppendAllText("catfact.txt",jsonResponse);
-    }
-
-    static void Main(string[] args)
-    {
-        Console.WriteLine("If you can see this, the app is incomplete");
-        Run().Wait();
         
     }
 }
