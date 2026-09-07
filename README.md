@@ -1,3 +1,3 @@
 # netwise-task
-Recruitment task for Netwise\n
+Recruitment task for Netwise\
 Zadanie rekrutacyjne dla Netwise
