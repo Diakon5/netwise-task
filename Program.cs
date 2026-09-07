@@ -12,7 +12,7 @@ class Program
         BaseAddress = new Uri("https://catfact.ninja"),
     };
 
-    static async Task Main(string[] args)
+    static async Task<int> Main(string[] args)
     {
         Console.WriteLine("If you can see this, the app is incomplete");
         using HttpResponseMessage response = await httpClient.GetAsync("fact");
@@ -24,6 +24,6 @@ class Program
             jsonResponse = $"{jsonResponse}\n";
         }
         File.AppendAllText("catfact.txt",jsonResponse);
-        
+        return 0;
     }
 }
